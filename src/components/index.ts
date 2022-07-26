@@ -1,2 +1,2 @@
-export {Button} from './Inputs/Button';
-export {Input} from './Inputs/Input';
+export { Button } from './Inputs/Button';
+export { Input } from './Inputs/Input';
