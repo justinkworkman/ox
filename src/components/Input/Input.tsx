@@ -31,13 +31,13 @@ const StyledText = styled.p<InputProps>`
 `;
 
 const Input: FC<InputProps> = ({id, disabled, label, message, error, success, onChange, placeholder, ...props}) => {
-    return (
-      <Fragment>
-        <StyledLabel disabled={disabled}><StyledText disabled={disabled} error={error}>{label}</StyledText></StyledLabel>
-        <StyledInput id={id} type="text" onChange={onChange} disabled={disabled} error={error} success={success} placeholder={placeholder} {...props}></StyledInput>
-        <StyledMessage disabled={disabled}><StyledText disabled={disabled} error={error}>{message}</StyledText></StyledMessage>
-      </Fragment>
-    )
+  return (
+    <Fragment>
+      <StyledLabel><StyledText disabled={disabled} error={error}>{label}</StyledText></StyledLabel>
+      <StyledInput id={id} type="text" onChange={onChange} disabled={disabled} error={error} success={success} placeholder={placeholder} {...props}></StyledInput>
+      <StyledMessage><StyledText error={error}>{message}</StyledText></StyledMessage>
+    </Fragment>
+  )
 }
 
 export default Input;

@@ -6,7 +6,7 @@ export interface InputProps {
     error?:boolean,
     message?:string,
     success?:boolean,
-    disabled:boolean,
+    disabled?:boolean,
     placeholder?:string,
     onChange?:ChangeEventHandler<HTMLInputElement>
 };
