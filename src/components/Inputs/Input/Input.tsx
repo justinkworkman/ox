@@ -1,6 +1,8 @@
 import React, {FC, Fragment} from 'react';
 import styled from 'styled-components';
 import { InputProps } from './Input.types';
+import { Label } from '../Label';
+import { Text } from '../../../accessories';
 
 const StyledInput = styled.input<InputProps>`
     height: 40px;
@@ -13,29 +15,20 @@ const StyledInput = styled.input<InputProps>`
     }
 `;
 
-const StyledLabel = styled.div<InputProps>`
-    font-size: 14px;
-    color: ${props => props.disabled ? "#e4e3ea" : "#080808"};
-    padding-bottom: 6px;
-`;
-
 const StyledMessage = styled.div<InputProps>`
    font-size: 14px;
    color: #a9150b8;
    padding-top: 4px;
 `;
 
-const StyledText = styled.p<InputProps>`
-   margin: 0px;
-   color: ${props => props.disabled ? "#e4e3ea" : (props.error ? "#a9150b": "#080808")};
-`;
+
 
 const Input: FC<InputProps> = ({id, disabled, label, message, error, success, onChange, placeholder, ...props}) => {
   return (
     <Fragment>
-      <StyledLabel><StyledText disabled={disabled} error={error}>{label}</StyledText></StyledLabel>
+      <Label disabled={disabled} error={error} text={label} />
       <StyledInput id={id} type="text" onChange={onChange} disabled={disabled} error={error} success={success} placeholder={placeholder} {...props}></StyledInput>
-      <StyledMessage><StyledText error={error}>{message}</StyledText></StyledMessage>
+      <StyledMessage><Text error={error}>{message}</Text></StyledMessage>
     </Fragment>
   )
 }
