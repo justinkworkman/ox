@@ -8,5 +8,5 @@ export interface CheckBoxProps {
     message?:string,
     success?:boolean,
     disabled?:boolean,
-    onChange?:ChangeEventHandler<HTMLInputElement>
+    onClick?:ChangeEventHandler<HTMLInputElement>
 };
