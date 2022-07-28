@@ -5,7 +5,7 @@ import Button from './Button';
 import { ButtonProps } from './Button.types';
 
 export default {
-    title: 'Marbella/Button',
+    title: 'Ox/Button',
     component: Button,
     argTypes: {
 

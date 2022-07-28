@@ -1,21 +1,30 @@
 import React from 'react';
 import {Story, Meta} from '@storybook/react';
-import Input from './Input';
-import { InputProps } from './Input.types';
+import Checkbox from './Checkbox';
+import { CheckBoxProps } from './CheckBox.types';
 
 export default {
-    title: 'Ox/Input',
-    component: Input,
+    title: 'Ox/Checkbox',
+    component: Checkbox,
     argTypes: {},
-} as Meta<typeof Input>;
+} as Meta<typeof Checkbox>;
 
-const Template: Story<InputProps> = (args) => <Input {...args} />;
+const Template: Story<CheckBoxProps> = (args) => <Checkbox {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
+    checked: true,
     error: false,
     disabled: false,
     label: 'Primary',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    checked: false,
+    error: false,
+    disabled: false,
+    label: 'Secondary',
 };
 
 export const Success = Template.bind({});
